@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\ButtonPlaceBuild.cs" />
      <Compile Include="Assets\Scripts\PlayerObject.cs" />
      <Compile Include="Assets\Scripts\CameraControler1.cs" />
+     <Compile Include="Assets\Scripts\SelectController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2021.3.22f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

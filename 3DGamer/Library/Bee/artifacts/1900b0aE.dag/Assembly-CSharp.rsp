@@ -353,6 +353,7 @@
 "Assets/Scripts/CameraControler1.cs"
 "Assets/Scripts/PlayerObject.cs"
 "Assets/Scripts/Rain.cs"
+"Assets/Scripts/SelectController.cs"
 -langversion:9.0
 
 /deterministic
