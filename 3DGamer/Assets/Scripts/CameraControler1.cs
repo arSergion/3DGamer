@@ -23,7 +23,6 @@ public class CameraControler1 : MonoBehaviour
             transform.Translate(-delta * Time.deltaTime * moveSpeed);
             lastMousePosition = new Vector3(mouseX, mouseY, 0);
         }
-
-        transform.position += transform.forward * mouseScroll * zoomSpeed * Time.deltaTime;
+            transform.position += transform.forward * mouseScroll * zoomSpeed * Time.deltaTime;
     }
 }

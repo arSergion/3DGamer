@@ -16,8 +16,18 @@ public class SelectController : MonoBehaviour
     }
     private void Update() 
     {
+      if(Input.GetMouseButtonDown(0) && players.Count > 0){
+            Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out RaycastHit agentTarget, 1000f, layer))
+                foreach (var el in players)
+                    el.GetComponent<UnityEngine.AI.NavMeshAgent>().SetDestination(agentTarget.point);
+        }
+    
         if(Input.GetMouseButtonDown(1))
         {   
+            foreach (var el in players)
+                if(el != null)
+                    el.transform.GetChild(0).gameObject.SetActive(false);
             players.Clear();
             Ray ray = _cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray, out _hit, 1000f, layer))
@@ -52,7 +62,9 @@ public class SelectController : MonoBehaviour
                 layerMask);
             foreach (var element in hits)
             {
+               if(element.collider.CompareTag("Enemy")) continue;
                players.Add(element.transform.gameObject);
+               element.transform.GetChild(0).gameObject.SetActive(true);
             }
             Destroy(_cubeSelection);
         }

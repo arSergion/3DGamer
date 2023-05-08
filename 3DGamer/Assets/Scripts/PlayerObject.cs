@@ -16,7 +16,10 @@ public class PlayerObject : MonoBehaviour
     private void Update(){
         PositionObject();
     if(Input.GetMouseButtonDown(0))
+    {
+        gameObject.GetComponent<AutoCarCreate>().enabled = true;
         Destroy(gameObject.GetComponent<PlayerObject>());
+    }
     if(Input.GetKey(KeyCode.LeftShift))
         transform.Rotate(Vector3.up * Time.deltaTime * rotateSpeed);
     }

@@ -16,5 +16,6 @@ public class CameraControler : MonoBehaviour
         mult = Input.GetKey(KeyCode.LeftShift) ? 2f : 1f;
         transform.Rotate(Vector3.up * rotateSpeed * Time.deltaTime * rotate * mult, Space.World);
         transform.Translate(new Vector3(hor, 0, ver) * Time.deltaTime * mult * speed, Space.Self);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, 15f, 70f) , transform.position.z);
     }
 }
